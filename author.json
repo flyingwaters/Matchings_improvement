@@ -1,0 +1,1407 @@
+{
+  "correspondence_set": [
+    [
+      [
+        "table_1",
+        "EID"
+      ],
+      [
+        "table_2",
+        "EID"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Authors Name"
+      ],
+      [
+        "table_2",
+        "Authors"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Email Address"
+      ],
+      [
+        "table_2",
+        "Email"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Cited index"
+      ],
+      [
+        "table_2",
+        "Cited by"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Phone Number"
+      ],
+      [
+        "table_2",
+        "Telephone"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Email Address"
+      ],
+      [
+        "table_2",
+        "Document Type"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Source title"
+      ],
+      [
+        "table_2",
+        "Document Type"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Paper Title"
+      ],
+      [
+        "table_2",
+        "Document Type"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Phone Number"
+      ],
+      [
+        "table_2",
+        "Access Type"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Paper Title"
+      ],
+      [
+        "table_2",
+        "Nationality"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Source title"
+      ],
+      [
+        "table_2",
+        "aggregationType"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Email Address"
+      ],
+      [
+        "table_2",
+        "Telephone"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Email Address"
+      ],
+      [
+        "table_2",
+        "aggregationType"
+      ]
+    ]
+  ],
+  "c_prob": [
+    1.0000000000000002,
+    1.0000000000000002,
+    0.4299858557284301,
+    1.0000000000000002,
+    0.3333333333333334,
+    0.074964639321075,
+    0.18531323468399952,
+    0.17951619748196354,
+    0.3333333333333335,
+    0.15381713585136988,
+    0.14802009864933394,
+    0.08533710513908536,
+    0.07637906647807638
+  ],
+  "matchings": [
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Email Address"
+        ],
+        [
+          "table_2",
+          "Email"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Phone Number"
+        ],
+        [
+          "table_2",
+          "Telephone"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Email Address"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Source title"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Paper Title"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Phone Number"
+        ],
+        [
+          "table_2",
+          "Access Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Email Address"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Source title"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Paper Title"
+        ],
+        [
+          "table_2",
+          "Nationality"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Phone Number"
+        ],
+        [
+          "table_2",
+          "Access Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Email Address"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Source title"
+        ],
+        [
+          "table_2",
+          "aggregationType"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Paper Title"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Phone Number"
+        ],
+        [
+          "table_2",
+          "Access Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Email Address"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Source title"
+        ],
+        [
+          "table_2",
+          "aggregationType"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Paper Title"
+        ],
+        [
+          "table_2",
+          "Nationality"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Phone Number"
+        ],
+        [
+          "table_2",
+          "Access Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Email Address"
+        ],
+        [
+          "table_2",
+          "Email"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Source title"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Paper Title"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Phone Number"
+        ],
+        [
+          "table_2",
+          "Access Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Email Address"
+        ],
+        [
+          "table_2",
+          "Email"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Source title"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Paper Title"
+        ],
+        [
+          "table_2",
+          "Nationality"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Phone Number"
+        ],
+        [
+          "table_2",
+          "Access Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Email Address"
+        ],
+        [
+          "table_2",
+          "Email"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Source title"
+        ],
+        [
+          "table_2",
+          "aggregationType"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Paper Title"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Phone Number"
+        ],
+        [
+          "table_2",
+          "Access Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Email Address"
+        ],
+        [
+          "table_2",
+          "Email"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Source title"
+        ],
+        [
+          "table_2",
+          "aggregationType"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Paper Title"
+        ],
+        [
+          "table_2",
+          "Nationality"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Phone Number"
+        ],
+        [
+          "table_2",
+          "Access Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Email Address"
+        ],
+        [
+          "table_2",
+          "Telephone"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Source title"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Paper Title"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Phone Number"
+        ],
+        [
+          "table_2",
+          "Access Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Email Address"
+        ],
+        [
+          "table_2",
+          "Telephone"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Source title"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Paper Title"
+        ],
+        [
+          "table_2",
+          "Nationality"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Phone Number"
+        ],
+        [
+          "table_2",
+          "Access Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Email Address"
+        ],
+        [
+          "table_2",
+          "Telephone"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Source title"
+        ],
+        [
+          "table_2",
+          "aggregationType"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Paper Title"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Phone Number"
+        ],
+        [
+          "table_2",
+          "Access Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Email Address"
+        ],
+        [
+          "table_2",
+          "Telephone"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Source title"
+        ],
+        [
+          "table_2",
+          "aggregationType"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Paper Title"
+        ],
+        [
+          "table_2",
+          "Nationality"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Phone Number"
+        ],
+        [
+          "table_2",
+          "Access Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Email Address"
+        ],
+        [
+          "table_2",
+          "aggregationType"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Source title"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Paper Title"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Phone Number"
+        ],
+        [
+          "table_2",
+          "Access Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Email Address"
+        ],
+        [
+          "table_2",
+          "aggregationType"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Source title"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Paper Title"
+        ],
+        [
+          "table_2",
+          "Nationality"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Phone Number"
+        ],
+        [
+          "table_2",
+          "Access Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Email Address"
+        ],
+        [
+          "table_2",
+          "aggregationType"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Source title"
+        ],
+        [
+          "table_2",
+          "aggregationType"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Paper Title"
+        ],
+        [
+          "table_2",
+          "Document Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Phone Number"
+        ],
+        [
+          "table_2",
+          "Access Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Email Address"
+        ],
+        [
+          "table_2",
+          "aggregationType"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Source title"
+        ],
+        [
+          "table_2",
+          "aggregationType"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Paper Title"
+        ],
+        [
+          "table_2",
+          "Nationality"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Phone Number"
+        ],
+        [
+          "table_2",
+          "Access Type"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "EID"
+        ],
+        [
+          "table_2",
+          "EID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Authors Name"
+        ],
+        [
+          "table_2",
+          "Authors"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Cited index"
+        ],
+        [
+          "table_2",
+          "Cited by"
+        ]
+      ]
+    ]
+  ],
+  "prob_all": [
+    0.3333333333333334,
+    0.02244445387610382,
+    0.019231365522419407,
+    0.01792764711347497,
+    0.015361172809076791,
+    0.02893781789057411,
+    0.02479515680563508,
+    0.023114262001650124,
+    0.019805285697237374,
+    0.02554997579606787,
+    0.021892309179609513,
+    0.020408202059993517,
+    0.017486618103414463,
+    0.022867934137917094,
+    0.019594221475672594,
+    0.01826590460618204,
+    0.015651006258304654,
+    0.3333333333333334
+  ]
+}

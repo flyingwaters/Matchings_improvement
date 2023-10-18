@@ -1,0 +1,3 @@
+Product       ,Unit Price ,Quantity ,Total Price ,Supplier Name ,Purchasing Manager ,Product ID ,Order ID ,Application Date ,Order status    ,Delivery Date ,Purchasing Department      ,Actual delivery quantity ,Undelivered quantity ,Expected replacement date
+basketball    ,90 yuan    ,     300 ,27000 yuan  ,Nike          ,Ding Yuan          ,       001 , 2023104 ,        20230901 ,Not yet started ,     20231010 ,Sports Training Department ,                       0 ,                 300 ,20231010
+Mineral water ,24 yuan    ,      60 ,1440 yuan   ,Nongfu Spring ,Shao Fei           ,       104 , 2023105 ,       202320910 ,Finished        ,     20230914 ,Human resources department ,                      60 ,                   0 ,None

@@ -1,0 +1,3 @@
+EmployeeID, first name, last name, phone, relative name, education background, language, certificate,work experience, gender,interests, nationality, income,others,email address
+123,longyu, Feng, 19012367, Chen Wang, Master, English, advanced engineer, 3 years, male, basketball, China, $2000, no, longyufeng@gmail.com
+405,Mike, Li, 19012678, Louis Jerry, bachelor, Chinese, no, 10 years,female, no, England, $400,no, jerry@gmail.com
