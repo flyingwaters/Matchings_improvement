@@ -1,4 +1,3 @@
-import imp
 import numpy as np
 from itertools import combinations
 
@@ -12,12 +11,12 @@ import random
 class QuerySelector(metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def select(self, facts: FactSet,
-               num: int,
+               budget: int,
                worker_accuracy: np.array) -> Tuple[np.ndarray, "FactSet", float]:
         """
-        根据该类的策略，从facts中选取num个fact
+        根据该类的策略，固定budget 下 选择 correspondence
         :param facts: 需要被选择作为问题的事实集
-        :param num: 选取fact作为问题的数量
+        :param budget: 每轮的成本
         :param worker_accuracy: 工人的回答准确率
         :return: 返回facts的一个子集, 包括其相对于原来的索引
         """
@@ -83,24 +82,56 @@ class GreedyQuerySelector(QuerySelector):  # 改6
     贪心法的问题选择器
     """
     def select(self, facts: FactSet,
-               num: int,
+               budget: int,
                worker_accuracy: np.ndarray,
                cost_func:int=1
                ) -> Tuple[np.ndarray, "FactSet", float]:
+        num_fact:int = facts.num_fact()
+        c_max_cost: int = 3
+        assert budget >= 3*c_max_cost, "不大于3个最大correspondence 的cost"
         
-        num_fact: int = facts.num_fact()
-        if num > num_fact:  # k等于5，但fact只有4
-            num = num_fact
-        assert num <= num_fact
         max_selection: list = []
-        now_num = 0  # 避免计算len(max_selection)
         max_hsum = 0.
-        while now_num < num:  # 近似找到fact最优组合
+        # 穷举 计算所有2个 correspondence 最大化 H
+        c_index_list = list(range(num_fact))
+        
+        for two_index in combinations(c_index_list, 2):
+            two_sub_facts = facts.get_subset(list(two_index))
+            prior_p = two_sub_facts.get_prior_p()
+            two_cur_h = 0
+            for two_i in range(len(two_sub_facts)):
+                    two_cur_h_a_i = 0.  # 获得H(o|AS T∪{idx} CE) 即 cur_h
+                    # 传进去sub_facts[i]，相当于一个 o --- (当CE答案为sub_facts[i]时，获得P(ATCE) 和 P(ATCE|o))
+                    ans_p, ans_p_post_o = two_sub_facts.compute_ans_p(two_sub_facts[two_i],
+                                                       list(range(two_sub_facts.num_fact())),
+                                                       worker_accuracy[:, list(two_index)])
+                    # h -= np.sum(ans_p * np.log(ans_p)).item()
+                    # 获得P(o|ATCE) = P(o) * P(ATCE|o) / P(ATCE)
+                    o_p_post_ans = prior_p * ans_p_post_o / ans_p
+                    # HC bugs 
+                    for  i in o_p_post_ans:
+                        if i ==0: # 有些为0的 不好算log
+                             i=0.00000001
+                        two_cur_h_a_i -= (i * np.log(i)).item() # H(o|AS T∪{idx} CE)
+                    
+                    # 期望的expectation
+                    two_cur_h+=ans_p*two_cur_h_a_i
+                    # cur_h -= np.sum(-o_p_post_ans * np.log(o_p_post_ans)).item()
+                    if two_cur_h > max_hsum:
+                        max_selection = list(two_index)
+                        max_hsum = two_cur_h
+        # 减掉成本
+       
+        for ix in max_selection:
+            budget -= facts.len_list()[ix]
+        
+        # >3 的 greedy algorithmn
+        now_num = 0 
+        while budget>0:  # 近似找到fact最优组合
             max_h_gain = 0.  # 质量增益最低也得为0
             # max_h_gain: float = -float('inf')
             max_idx = -1
             for idx in range(num_fact):
-                
                 ### cost 对比
                 if cost_func == 1:
                     w = 1.0
@@ -157,12 +188,13 @@ class GreedyQuerySelector(QuerySelector):  # 改6
                 for i in range(num_fact):
                     if i not in max_selection:
                         max_selection.append(i)
+                        budget -= facts.len_list[max_idx]
                         break
             else:
                 max_hsum += max_h_gain
                 assert max_idx < num_fact, f"exceed num_fact {num_fact},{max_idx}"
                 max_selection.append(max_idx)
-            now_num += 1
+                budget -= facts.len_list()[max_idx]
         # print('len(max_selection): ', len(max_selection))
         # print('max_selection: ', max_selection)
         return np.array(max_selection), facts.get_subset(list(max_selection)), max_hsum
@@ -173,15 +205,25 @@ class RandomQuerySelector(QuerySelector):  #2.6
     随机法的问题选择器
     """
     def select(self, facts: FactSet,
-               num: int,
+               budget: int,
                worker_accuracy: np.ndarray) -> Tuple[np.ndarray, "FactSet", float]:
-        num_fact: int = facts.num_fact()
-        if num > num_fact:
-            num = num_fact
-        assert num <= num_fact
+        """
+        每轮固定budget 的选择
+        """
         import random
         import numpy as np
-        selection = random.sample(range(0, num_fact),num)
+        
+        num_fact = facts.num_fact()
+        cost_list = facts.len_list()
+        selection = []
+        while budget>0:
+            tmp_ix = random.sample(range(0, num_fact),1)
+            num_fact.pop(tmp_ix)
+            if budget - cost_list[tmp_ix[0]]:
+                selection.extend(tmp_ix)
+            budget -= cost_list[tmp_ix[0]]
+        
+            
         # selection = np.random.choice(num_fact,num,replace=False)
         # sub_facts = facts.get_subset(list(selection))
         
