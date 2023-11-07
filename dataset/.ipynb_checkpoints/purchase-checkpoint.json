@@ -1,0 +1,2803 @@
+{
+  "correspondence_set": [
+    [
+      [
+        "table_1",
+        "Delivery Date"
+      ],
+      [
+        "table_2",
+        "delivery date"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Purchasing Manager"
+      ],
+      [
+        "table_2",
+        "purchasing number"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Product"
+      ],
+      [
+        "table_2",
+        "product name"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Application Date"
+      ],
+      [
+        "table_2",
+        "Application Department"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Supplier Name"
+      ],
+      [
+        "table_2",
+        "Supplier Company"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Order ID"
+      ],
+      [
+        "table_2",
+        "Order Manager"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Application Date"
+      ],
+      [
+        "table_2",
+        "Application Staff name"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Product"
+      ],
+      [
+        "table_2",
+        "product requirement"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Total Price"
+      ],
+      [
+        "table_2",
+        "product price"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Order status"
+      ],
+      [
+        "table_2",
+        "current status"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Unit Price"
+      ],
+      [
+        "table_2",
+        "product price"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Application Date"
+      ],
+      [
+        "table_2",
+        "delivery date"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Product ID"
+      ],
+      [
+        "table_2",
+        "ID"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Purchasing Department"
+      ],
+      [
+        "table_2",
+        "Application Department"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Order ID"
+      ],
+      [
+        "table_2",
+        "ID"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Purchasing Manager"
+      ],
+      [
+        "table_2",
+        "Order Manager"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Actual delivery quantity"
+      ],
+      [
+        "table_2",
+        "delivery date"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Order ID"
+      ],
+      [
+        "table_2",
+        "purchasing number"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Supplier Name"
+      ],
+      [
+        "table_2",
+        "Supplier Company candidate"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Supplier Name"
+      ],
+      [
+        "table_2",
+        "product name"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Product"
+      ],
+      [
+        "table_2",
+        "product price"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Quantity"
+      ],
+      [
+        "table_2",
+        "purchasing number"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Order ID"
+      ],
+      [
+        "table_2",
+        "delivery date"
+      ]
+    ],
+    [
+      [
+        "table_1",
+        "Undelivered quantity"
+      ],
+      [
+        "table_2",
+        "purchasing number"
+      ]
+    ]
+  ],
+  "c_prob": [
+    1.0000000000000002,
+    0.33333333333333337,
+    0.28214986093718314,
+    0.16666666666666669,
+    0.44517143436802603,
+    0.33333333333333337,
+    0.16666666666666669,
+    0.27538540261144334,
+    0.33333333333333326,
+    0.33333333333333326,
+    0.6666666666666665,
+    0.6666666666666665,
+    0.33333333333333326,
+    0.33333333333333326,
+    0.1685231079277758,
+    0.33333333333333326,
+    0.33333333333333326,
+    0.1648102254055575,
+    0.11041793467234731,
+    0.11107729762629334,
+    0.1091314031180401,
+    0.3333333333333333,
+    0.3333333333333333,
+    0.3333333333333333
+  ],
+  "matchings": [
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "purchasing number"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product name"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "Supplier Company"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "purchasing number"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product name"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "Application Staff name"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "Supplier Company"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "purchasing number"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product requirement"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "Supplier Company"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "purchasing number"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product requirement"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "Application Staff name"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "Supplier Company"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product name"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "Supplier Company"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product name"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "Supplier Company"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "purchasing number"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product name"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "Supplier Company candidate"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product name"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "Supplier Company candidate"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "purchasing number"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product name"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "product name"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product name"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "product name"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "purchasing number"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "Supplier Company"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "Supplier Company"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "purchasing number"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "Supplier Company candidate"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "Supplier Company candidate"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "purchasing number"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "product name"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "product name"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "purchasing number"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product requirement"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "Supplier Company"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product requirement"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "Supplier Company"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "purchasing number"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product requirement"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "Supplier Company candidate"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product requirement"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "Supplier Company candidate"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "purchasing number"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product requirement"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "product name"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Total Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order status"
+        ],
+        [
+          "table_2",
+          "current status"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product"
+        ],
+        [
+          "table_2",
+          "product requirement"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Product ID"
+        ],
+        [
+          "table_2",
+          "ID"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Department"
+        ],
+        [
+          "table_2",
+          "Application Department"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Supplier Name"
+        ],
+        [
+          "table_2",
+          "product name"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "purchasing number"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Purchasing Manager"
+        ],
+        [
+          "table_2",
+          "Order Manager"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Actual delivery quantity"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "table_1",
+          "Unit Price"
+        ],
+        [
+          "table_2",
+          "product price"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Quantity"
+        ],
+        [
+          "table_2",
+          "purchasing number"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Order ID"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Application Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Delivery Date"
+        ],
+        [
+          "table_2",
+          "delivery date"
+        ]
+      ],
+      [
+        [
+          "table_1",
+          "Undelivered quantity"
+        ],
+        [
+          "table_2",
+          "purchasing number"
+        ]
+      ]
+    ]
+  ],
+  "prob_all": [
+    0.08353966691996502,
+    0.08353966691996502,
+    0.08312699974670165,
+    0.08312699974670165,
+    0.019518923235110817,
+    0.019088884471742985,
+    0.01927106389244274,
+    0.018846485938768472,
+    0.019386141444395776,
+    0.018959028114792355,
+    0.0185114949391051,
+    0.018103651724814318,
+    0.01827642833670376,
+    0.017873764083864294,
+    0.01838556640210438,
+    0.017980497631448232,
+    0.0185114949391051,
+    0.018103651724814318,
+    0.01827642833670376,
+    0.017873764083864294,
+    0.01838556640210438,
+    0.017980497631448232,
+    0.3333333333333333
+  ]
+}
