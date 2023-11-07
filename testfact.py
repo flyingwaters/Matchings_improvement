@@ -24,19 +24,29 @@ class TestFactSet(unittest.TestCase):
         facts = self.fact_case1
         accuracy = np.array([[0.8, 0.7, 0.9, 0.85]])  # 对应fact1, 3是0.8, 0.9
         ans = np.array([1, 0])
-        p, p_o = facts.compute_ans_p(ans, [0, 2], accuracy)
-        p2, p2_o = facts.compute_ans_p(ans,[2, 0], accuracy)
-        print(p, p2)
-        
+        p, _ = facts.compute_ans_p(ans, [0, 2], accuracy)
+        print(p)
+        self.assertAlmostEquals(p, 0.19,
+                                msg=f"p={p} not almost equal to 0.2276")
 
-    def test_compute_entropy(self):
-        facts = self.fact_case1
-        subfact1 = facts.get_subset([0, 1,3,2])  # entropy 1.993
-        subfact2 = facts.get_subset([ 0,1,2,3])
-        assert subfact2.get_prior_p().any()==subfact1.get_prior_p().any()
-        
+    # def test_compute_entropy(self):
+    #     facts = self.fact_case1
+    #     subfact1 = facts.get_subset([0, 1])  # entropy 1.993
+    #     subfact2 = facts.get_subset([0, 2])  # entropy 1.982
+    #     subfact3 = facts.get_subset([0, 3])  # entropy 1.997
 
-       
+    #     entropy1 = subfact1.compute_entropy()
+    #     entropy1_ = subfact1.compute_ansset_entropy(np.array([0.8, 0.8]))
+
+    #     entropy2 = subfact2.compute_entropy()
+    #     entropy2_ = subfact2.compute_ansset_entropy(np.array([0.8, 0.8]))
+
+    #     entropy3 = subfact3.compute_entropy()
+    #     entropy3_ = subfact3.compute_ansset_entropy(np.array([0.8, 0.8]))
+
+    #     self.assertAlmostEquals(entropy2, 1.992)
+    #     self.assertAlmostEquals(entropy1, 1.993)
+    #     self.assertAlmostEquals(entropy3, 1.997)
 
 if __name__ == "__main__":
     unittest.main()

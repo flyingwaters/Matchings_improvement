@@ -50,7 +50,7 @@ class FactSet(Sequence):
 
     def len_list(self)->List[int]:
         return self._len_list 
-    
+        
     def post_p(self) -> np.ndarray:
         """
         后验概率
@@ -75,12 +75,17 @@ class FactSet(Sequence):
         :param f_indexes: 选取的fact在facts下的索引序列
         :return: 返回一个F中的子集T
         """
+        # 恢复从小到大
+        f_indexes.sort()
         sub_facts: np.ndarray = np.unique(self.facts[:, f_indexes], axis=0)
         sub_p: np.array = np.zeros(len(sub_facts))
+        
         for i in range(len(sub_facts)):
+            #print("h", np.prod(self.facts[:, f_indexes] == sub_facts[i], axis=1))
             sub_p[i] = np.sum(
                 self._prior_p[np.prod(self.facts[:, f_indexes] == sub_facts[i], axis=1) == 1]
             )
+        
         # ground_true: 真值对应的facts索引
         sub_ground_true_val = self.facts[self._ground_true, f_indexes]
         sub_ground_true, = np.where(
@@ -114,24 +119,19 @@ class FactSet(Sequence):
         :param ans:
         :param fact_idxes: 回答的问题的索引, 比如回答的是第一第三个，对应(0, 2)
         :param worker_accuracy:
-        :return: 该回答的概率p(ans)以及对应各个输出的边缘概率p(ans|o)
+        :return: 该回答的概率 p(ans) 以及对应各个输出的边缘概率 p(ans|o)
         """
         # assert len(worker_accuracy) == self.facts.shape[1]
-        p_post_o_list = []
-        for acc in worker_accuracy:
-            is_implicit: np.ndarray = (self.facts[:, fact_idxes] == ans)
-            p_mat = is_implicit * acc[fact_idxes] + \
-                    (1 - is_implicit) * (1 - acc[fact_idxes])
-            p_post_o = np.prod(p_mat, axis=1)
-            p_post_o_list.append(p_post_o)
-        # print("p(o|v): ", p_post_o_list)
-        Cumprod = np.ones_like(p_post_o_list[0])
-        for i in p_post_o_list:
-            Cumprod = Cumprod * i
-        
-        return np.sum(Cumprod * self._prior_p).item(), Cumprod
+        mask: np.ndarray = (self.facts[:, fact_idxes] == ans)
+        acc = worker_accuracy[0]
+        Cumprod = np.prod(acc[fact_idxes]**mask *((1-acc[fact_idxes])**(1-mask)),  axis=1)
+        ###
+        # 注意multiple random variable joint distribution will lead to a new 
+        # probability
+        # 获取p(u)
+        p_ans = np.sum(Cumprod*self.get_prior_p())
+        return p_ans, Cumprod
 
-    
     def compute_entropy(self)->float:
         """
         计算问题集合的墒
@@ -142,9 +142,11 @@ class FactSet(Sequence):
         """
         计算回答集合的墒
         :param worker_accuracy: 工人对每一个fact的回答准确率
+        monotone submodualr function property 
         """
         h = 0.
         for i in range(len(self.facts)):
+            
             p_ans, _ = self.compute_ans_p(self.facts[i],
                                           list(range(self.num_fact())),
                                           worker_accuracy)

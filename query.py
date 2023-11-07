@@ -3,9 +3,82 @@ from itertools import combinations
 
 # from regex import subf
 from fact import FactSet
-from typing import Tuple
+from typing import Tuple, List
 import abc
-import random
+
+
+def binary_combinations(n):
+    # 二进制解空间
+    for i in range(2**n):
+        binary_string = bin(i)[2:].zfill(n)
+        combination = [int(bit) for bit in binary_string]
+        yield combination
+
+def cac_entropy(prior_p, ans_p_post_o, ans_p):
+    cur_h = 0
+    o_p_post_ans = prior_p * ans_p_post_o / ans_p
+        # 质量增益 论文中的 ΔQ(F|T)
+    for i2 in o_p_post_ans:
+        cur_h -= (i2 * np.log(i2)).item()  # H(o|AS T CE)
+    return cur_h
+
+
+def expectation_cond(facts: FactSet, selection: List[int], worker_accuracy) -> float:
+    """
+    可变变量 selection, worker_accuracy
+    计算query of correspondences set 的 
+    return h(V|T) 
+    """
+    length = len(selection)
+    # space 生成过程
+    combinations = list(binary_combinations(length))
+    prior_p = facts.get_prior_p()  # 初始化prior_p
+    # 排序 后去除 顺序
+    selection.sort()
+
+    set_expected_h = 0
+    for ans in combinations:
+        # 传进去sub_facts[i]，相当于一个 o --- (当CE答案为sub_facts[i]时，获得P(ATCE) 和 P(ATCE|o))
+        ans_p, ans_p_post_o = facts.compute_ans_p(ans,
+                                                list(selection),
+                                                worker_accuracy)
+        # h -= p_ans * np.log(p_ans)
+        # 获得P(o|ATCE) = P(o) * P(ATCE|o) / P(ATCE)
+        assert ans_p!=0, "ans_p = 0 cause exception"
+        cur_h = cac_entropy(prior_p, ans_p_post_o, ans_p)
+        set_expected_h += ans_p*cur_h
+    return set_expected_h
+
+
+# for test 
+def expectation_cond2(facts: FactSet, selection: List[int], worker_accuracy) -> float:
+    """
+    可变变量 selection, worker_accuracy
+    计算query of correspondences set 的 
+    return h(V|T) 
+    """
+    length = len(selection)
+    # space 生成过程
+    combinations = list(binary_combinations(length))
+    prior_p = facts.get_prior_p()  # 初始化prior_p
+    # 排序 后去除 顺序
+    selection.sort()
+
+    sum_p = 0
+    set_expected_h = 0
+    for ans in combinations:
+        # 传进去sub_facts[i]，相当于一个 o --- (当CE答案为sub_facts[i]时，获得P(ATCE) 和 P(ATCE|o))
+        ans_p, ans_p_post_o = facts.compute_ans_p(ans,
+                                                list(selection),
+                                                worker_accuracy)
+        # h -= p_ans * np.log(p_ans)
+        # 获得P(o|ATCE) = P(o) * P(ATCE|o) / P(ATCE)
+        cur_h = cac_entropy(prior_p, ans_p_post_o, ans_p)
+        set_expected_h += ans_p*cur_h
+        sum_p+= ans_p 
+        print("ans: ", ans, "ans_p: ", ans_p, "cur_h: ", cur_h)
+    assert sum_p > 0.9999, "wrong ans_p"
+    return set_expected_h
 
 
 class QuerySelector(metaclass=abc.ABCMeta):
@@ -27,53 +100,45 @@ class BaseQuerySelector(QuerySelector):
     """
     暴力法的问题选择器
     """
-
-    def select(self, facts: FactSet, num: int, worker_accuracy: np.ndarray) -> Tuple[np.ndarray, "FactSet", float]:
+    def select(self, facts: FactSet, budget: int, worker_accuracy: np.ndarray) -> Tuple[np.ndarray, "FactSet", float]:
+        """budget each round 成本 cost """
+        cost_list = facts.len_list()
+        cost_list.sort()
+        sum_cost = 0
+        max_num = 0
+        
+        # limit of num for brute
+        for i in cost_list:
+            if sum_cost+i<=budget:
+                sum_cost+=i
+                max_num+=1
+            else:
+                break
         num_fact: int = facts.num_fact()
-        if num > num_fact:  # k等于5，但fact只有4
-            num = num_fact
-        assert num <= num_fact
-        # print('num: ', num)
-        selections = combinations(range(num_fact), num)
-        # print('worker_accuracy: ', worker_accuracy)
-        # max_h: float = -float('inf')
-        max_h = 0.
-        max_selection: Tuple[int] = (0,) * num_fact
-        for selection in selections:
-            sub_facts = facts.get_subset(list(selection))
-            # h = 0.
-            prior_p = sub_facts.get_prior_p()  # 初始化prior_p
-            h = 0.
-            for i in prior_p:
-                if i == 0:  # 有些为0的 不好算log
+        
+        max_selection = []
+        max_h = float('-inf')
+        
+        for num in range(1, max_num+1):
+            selections = combinations(range(num_fact), num)
+            
+            for selection in selections:
+                selection_cost = 0.
+                # 求和
+                for ix in selection:
+                    selection_cost+=cost_list[ix]
+                    
+                # 若超过预算 跳过
+                if selection_cost > budget:
                     continue
-                h -= (i * np.log(i)).item()  # H(O)
-            # 暴力枚举并找到fact最优组合
-            h_gain = 0.
-            for i in range(len(sub_facts)):
-                cur_h = 0.
-                # 传进去sub_facts[i]，相当于一个 o --- (当CE答案为sub_facts[i]时，获得P(ATCE) 和 P(ATCE|o))
-                ans_p, ans_p_post_o = sub_facts.compute_ans_p(sub_facts[i],
-                                                list(range(sub_facts.num_fact())),
-                                                worker_accuracy[:,list(selection)])
-
-                # h -= p_ans * np.log(p_ans)
-                # 获得P(o|ATCE) = P(o) * P(ATCE|o) / P(ATCE)
-                o_p_post_ans = prior_p * ans_p_post_o / ans_p
-
-                # 质量增益 论文中的 ΔQ(F|T)
-                for i in o_p_post_ans:
-                    if i == 0:  # 有些为0的 不好算log
-                        continue
-                    cur_h -= (i * np.log(i)).item()  # H(o|AS T CE)
-                h_gain = (h - cur_h)
-            if h_gain > max_h:
-                max_h = h_gain
-                max_selection = selection
-        if max_selection == (0,) * num_fact:
-            max_selection = random.sample(range(0, num_fact), num)
-
-        return np.array(max_selection), facts.get_subset(list(max_selection)), max_h
+                selection = list(selection)
+                set_expected_h = expectation_cond(facts, selection, worker_accuracy)
+                # print("selection:", selection,"set_expeted_h:", set_expected_h)
+                
+                if -set_expected_h > max_h:
+                    max_h = -set_expected_h
+                    max_selection = selection
+        return np.array(max_selection), "No", -max_h
 
 
 # 贪心法的问题选择器
@@ -86,118 +151,81 @@ class GreedyQuerySelector(QuerySelector):  # 改6
                worker_accuracy: np.ndarray,
                cost_func:int=1
                ) -> Tuple[np.ndarray, "FactSet", float]:
+        
         num_fact:int = facts.num_fact()
-        c_max_cost: int = 3
-        assert budget >= 3*c_max_cost, "不大于3个最大correspondence 的cost"
-        
+
         max_selection: list = []
-        max_hsum = 0.
+        max_hsum = -100.
         # 穷举 计算所有2个 correspondence 最大化 H
+        ######################
         c_index_list = list(range(num_fact))
-        
         for two_index in combinations(c_index_list, 2):
-            two_sub_facts = facts.get_subset(list(two_index))
-            prior_p = two_sub_facts.get_prior_p()
-            two_cur_h = 0
-            for two_i in range(len(two_sub_facts)):
-                    two_cur_h_a_i = 0.  # 获得H(o|AS T∪{idx} CE) 即 cur_h
-                    # 传进去sub_facts[i]，相当于一个 o --- (当CE答案为sub_facts[i]时，获得P(ATCE) 和 P(ATCE|o))
-                    ans_p, ans_p_post_o = two_sub_facts.compute_ans_p(two_sub_facts[two_i],
-                                                       list(range(two_sub_facts.num_fact())),
-                                                       worker_accuracy[:, list(two_index)])
-                    # h -= np.sum(ans_p * np.log(ans_p)).item()
-                    # 获得P(o|ATCE) = P(o) * P(ATCE|o) / P(ATCE)
-                    o_p_post_ans = prior_p * ans_p_post_o / ans_p
-                    # HC bugs 
-                    for  i in o_p_post_ans:
-                        if i ==0: # 有些为0的 不好算log
-                             i=0.00000001
-                        two_cur_h_a_i -= (i * np.log(i)).item() # H(o|AS T∪{idx} CE)
-                    
-                    # 期望的expectation
-                    two_cur_h+=ans_p*two_cur_h_a_i
-                    # cur_h -= np.sum(-o_p_post_ans * np.log(o_p_post_ans)).item()
-                    if two_cur_h > max_hsum:
-                        max_selection = list(two_index)
-                        max_hsum = two_cur_h
-        # 减掉成本
-       
+            # minimize the h(V|T)
+            # maximize the -h(V|T)
+            two_cur_h = expectation_cond(facts=facts, selection=list(two_index), worker_accuracy=worker_accuracy)
+            if -two_cur_h > max_hsum:
+                max_selection = list(two_index)
+                max_hsum = -two_cur_h
+        # 2个correspondences 的穷举过程，减掉成本
+        candidates_list = list(range(num_fact))
         for ix in max_selection:
             budget -= facts.len_list()[ix]
-        
-        # >3 的 greedy algorithmn
-        now_num = 0 
+            candidates_list.remove(ix)
+        # print("budget:", budget, "two_selection:", max_selection)
+        # print("candidates_list:", candidates_list)
+        # print("##########################################")
+        ########################
         while budget>0:  # 近似找到fact最优组合
             max_h_gain = 0.  # 质量增益最低也得为0
-            # max_h_gain: float = -float('inf')
             max_idx = -1
-            for idx in range(num_fact):
+            # 原始
+            h = expectation_cond(facts=facts, selection=max_selection, worker_accuracy=worker_accuracy)
+            # print("candidate: ", candidates_list)
+            for idx in candidates_list:
                 ### cost 对比
                 if cost_func == 1:
                     w = 1.0
                 else:
                     w = facts.len_list()[idx]
-                    
-                if idx in max_selection:
+                # 检验 cost
+                if budget - w <0:
                     continue
+                
                 max_selection.append(idx)
-                sub_facts = facts.get_subset(list(max_selection))
+                cur_h =  expectation_cond(facts=facts, selection=max_selection, worker_accuracy=worker_accuracy)
+                h_gain = (h-cur_h)/w # 质量增益 每次的gain(f)\
                 
-                prior_p = sub_facts.get_prior_p()  # 初始化prior_p               
-                h_gain = 0.
-                if now_num == 0:  # h最初等于H(O)
-                    h = 0
-                    # h = np.sum(-prior_p * np.log(prior_p)).item()
-                else:  # 后面找的时候 h 需要更新为上次的 H(o|AS T∪{idx} CE)
-                    h = cur_h
-                
-                cur_h = 0
-                for i_sub in range(len(sub_facts)):
-                    cur_h_a_i = 0.  # 获得H(o|AS T∪{idx} CE) 即 cur_h
-                    # 传进去sub_facts[i]，相当于一个 o --- (当CE答案为sub_facts[i]时，获得P(ATCE) 和 P(ATCE|o))
-                    ans_p, ans_p_post_o = sub_facts.compute_ans_p(sub_facts[i_sub],
-                                                       list(range(sub_facts.num_fact())),
-                                                       worker_accuracy[:, list(max_selection)])
-                    # h -= np.sum(ans_p * np.log(ans_p)).item()
-                    # 获得P(o|ATCE) = P(o) * P(ATCE|o) / P(ATCE)
-                    o_p_post_ans = prior_p * ans_p_post_o / ans_p
-
-                    # HC bugs 
-                    for  i in o_p_post_ans:
-                        if i ==0: # 有些为0的 不好算log
-                             i=0.00000001
-                        cur_h_a_i -= (i * np.log(i)).item() # H(o|AS T∪{idx} CE)
-                    
-                    # 期望的expectation
-                    cur_h+=ans_p*cur_h_a_i
-                    # cur_h -= np.sum(-o_p_post_ans * np.log(o_p_post_ans)).item()
-                h_gain = (cur_h-h)/w # 质量增益 每次的gain(f)
-
                 # 选择最大的gain(f)
-                if h_gain > max_h_gain:
+                if h_gain >= (max_h_gain-0.000001):
                     max_h_gain = h_gain
                     if idx>num_fact:
                        print(f"idx,{idx},num_fact,{num_fact}") 
                     max_idx = idx   # 每次找出最大的idx在循环外部append
-                    # max_selection = copy.copy(max_selection)
-                max_selection.pop(now_num)  # 每次删除的位置一定改用pop()会更快
+            
+                assert max_h_gain >=-0.00000001, f"wrong selection, idx {max_idx}, {h} and {cur_h}"
+               
+                # 删除 增加的 元素
+                max_selection.remove(idx)  # 每次删除的位置一定改用pop()会更快
+                
             # 不知道为什么有时候max_idx = -1, 而且这好像是导致熵值不降反增的原因 猜测因为这一轮里面所有的 h_gain都小于0
             # 采取策略是随便塞一个进去
             if max_idx == -1:
-                # print('max_h:', max_h)
-                for i in range(num_fact):
-                    if i not in max_selection:
-                        max_selection.append(i)
-                        budget -= facts.len_list[max_idx]
-                        break
-            else:
-                max_hsum += max_h_gain
-                assert max_idx < num_fact, f"exceed num_fact {num_fact},{max_idx}"
-                max_selection.append(max_idx)
-                budget -= facts.len_list()[max_idx]
-        # print('len(max_selection): ', len(max_selection))
-        # print('max_selection: ', max_selection)
-        return np.array(max_selection), facts.get_subset(list(max_selection)), max_hsum
+                # 无法再加入任何correspondence
+                break
+            
+            
+            max_hsum += max_h_gain
+            assert max_idx < num_fact, f"exceed num_fact {num_fact},{max_idx}"
+                
+            budget -= facts.len_list()[max_idx]
+            max_selection.append(max_idx)
+            candidates_list.remove(max_idx)
+            if len(max_selection)==num_fact:
+                budget =-1
+        
+        # 实际选择的set
+        return_h = expectation_cond(facts=facts, selection=max_selection, worker_accuracy=worker_accuracy)
+        return np.array(max_selection), "No", -return_h
 
 
 class RandomQuerySelector(QuerySelector):  #2.6
@@ -216,9 +244,10 @@ class RandomQuerySelector(QuerySelector):  #2.6
         num_fact = facts.num_fact()
         cost_list = facts.len_list()
         selection = []
-        while budget>0:
-            tmp_ix = random.sample(range(0, num_fact),1)
-            num_fact.pop(tmp_ix)
+        candidate_list = list(range(0, num_fact))
+        while budget>0 and candidate_list!=[]:
+            tmp_ix = random.sample(candidate_list,1)
+            candidate_list.remove(tmp_ix[0])
             if budget - cost_list[tmp_ix[0]]:
                 selection.extend(tmp_ix)
             budget -= cost_list[tmp_ix[0]]
@@ -226,13 +255,33 @@ class RandomQuerySelector(QuerySelector):  #2.6
             
         # selection = np.random.choice(num_fact,num,replace=False)
         # sub_facts = facts.get_subset(list(selection))
+        h = expectation_cond(facts, selection, worker_accuracy)
+        return np.array(selection), 0, -h
+    
+    
+class HeuristicQuerySelector(QuerySelector):
+    """
+    启发式算法问题选择器
+    """
+    def select(self, facts:FactSet, budget: int, worker_accuracy: np.ndarray, max_iters:int, cost_func:int) -> Tuple[np.ndarray, "FactSet", float]:
+        from sko.GA import GA
+        num = facts.num_fact()
+        if cost_func==1:
+            cost = np.array([1 for _ in range(num)])
+        else:
+            cost = np.array(facts.len_list())
         
-        sub_facts = facts.get_subset(selection)
-        h = 0
-        for i in range(len(sub_facts)):
-            p_ans, _ = sub_facts.compute_ans_p(sub_facts[i],
-                                               list(range(sub_facts.num_fact())),
-                                               worker_accuracy[:,list(selection)])
-            h -= p_ans * np.log2(p_ans)
-        # print("base: ", selection, "max_h: ", h)
-        return np.array(selection), facts.get_subset(list(selection)), h
+        def func(x):
+            k = np.array(x)
+            selection = list(np.where(k==1)[0])
+            return expectation_cond(facts, selection, worker_accuracy)
+
+        constraint_ueq = [lambda x: np.sum(cost*x)-budget]
+        lb = [0 for i in range(num)]
+        ub = [1 for i in range(num)]
+        precision = [1 for _ in range(num)]
+        ga = GA(func=func, n_dim=num, constraint_ueq= constraint_ueq ,size_pop=50, max_iter=max_iters, prob_mut=0.001, lb=lb, ub=ub, precision=precision)
+        best_x, best_y = ga.run()
+        k = np.array(best_x)
+        selection = np.where(k==1)[0]
+        return  list(selection), 0, -best_y
