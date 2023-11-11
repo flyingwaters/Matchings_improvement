@@ -1,11 +1,12 @@
 import numpy as np
 from itertools import combinations
-
+from sko.GA import GA
 # from regex import subf
 from fact import FactSet
 from typing import Tuple, List
 import abc
-
+from sko.tools import set_run_mode
+from numba import jit
 
 def binary_combinations(n):
     # 二进制解空间
@@ -14,6 +15,7 @@ def binary_combinations(n):
         combination = [int(bit) for bit in binary_string]
         yield combination
 
+@jit(nopython=True)
 def cac_entropy(prior_p, ans_p_post_o, ans_p):
     cur_h = 0
     o_p_post_ans = prior_p * ans_p_post_o / ans_p
@@ -264,7 +266,6 @@ class HeuristicQuerySelector(QuerySelector):
     启发式算法问题选择器
     """
     def select(self, facts:FactSet, budget: int, worker_accuracy: np.ndarray, max_iters:int, cost_func:int) -> Tuple[np.ndarray, "FactSet", float]:
-        from sko.GA import GA
         num = facts.num_fact()
         if cost_func==1:
             cost = np.array([1 for _ in range(num)])
@@ -280,6 +281,7 @@ class HeuristicQuerySelector(QuerySelector):
         lb = [0 for i in range(num)]
         ub = [1 for i in range(num)]
         precision = [1 for _ in range(num)]
+        set_run_mode(func, 'cached')
         ga = GA(func=func, n_dim=num, constraint_ueq= constraint_ueq ,size_pop=50, max_iter=max_iters, prob_mut=0.001, lb=lb, ub=ub, precision=precision)
         best_x, best_y = ga.run()
         k = np.array(best_x)
