@@ -235,13 +235,13 @@ def conduct_ex():
 
 
 def add_ex():
-    budgets = [30,35]  
+    budgets = [20,25]  
     
     total_turns = 10
-    names = [ "purchase"]
+    names = [ "employee"]
     p_w = [0.83] 
-    paths = [f"./dataset/{i}.json" for i in [ "purchase"]]
-    ans_paths = [f"./dataset/{i}_ans.json" for i in ["purchase"]]
+    paths = [f"./dataset/{i}.json" for i in names]
+    ans_paths = [f"./dataset/{i}_ans.json" for i in names]
     
     for dataset_id, path_i in enumerate(paths):
         print(path_i , " start")
@@ -253,13 +253,13 @@ def add_ex():
             api_use = False
             ans_list = answers(ans_paths[dataset_id])
         
-            h_fact, h_selector = fact_selectors[3]
-            heuristic_h, h_time, h_cost, h_post_p = heuristic(h_fact, h_selector, budget, acc, total_turns, api_use, c_set, ans_list)
+            brute_fact, brute_selector = fact_selectors[2]
+            brute_h, brute_time, brute_cost, brute_post_p = brute(brute_fact, brute_selector, budget, acc, total_turns, api_use, c_set, ans_list)
             
-            approx_result = {"entropy":heuristic_h, "timecost":h_time,"cost": h_cost, "prob": h_post_p}
-            with open(f"./output/{names[dataset_id]}_approx_{budget}.json", "w") as f:
+            approx_result = {"entropy":brute_h, "timecost":brute_time,"cost": brute_cost, "prob": brute_post_p}
+            with open(f"./output/{names[dataset_id]}_update_brute_{budget}.json", "w") as f:
                 json.dump(approx_result, f, ensure_ascii=False, indent=2)
             print("finish~")
 
 if __name__ == "__main__":
-    conduct_ex()
+    add_ex()

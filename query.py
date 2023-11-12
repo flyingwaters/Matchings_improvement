@@ -108,7 +108,13 @@ class BaseQuerySelector(QuerySelector):
         cost_list.sort()
         sum_cost = 0
         max_num = 0
-        
+        least_num = 0
+        low_num = 0
+      
+        for i in cost_list[::-1]:
+            if least_num + i <= budget:
+                least_num += i
+                low_num += 1
         # limit of num for brute
         for i in cost_list:
             if sum_cost+i<=budget:
@@ -116,12 +122,13 @@ class BaseQuerySelector(QuerySelector):
                 max_num+=1
             else:
                 break
+        assert low_num <= max_num, f"{low_num}, low, {max_num} max"
         num_fact: int = facts.num_fact()
         
         max_selection = []
         max_h = float('-inf')
         
-        for num in range(1, max_num+1):
+        for num in range(low_num, max_num+1):
             selections = combinations(range(num_fact), num)
             
             for selection in selections:
