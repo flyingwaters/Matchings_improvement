@@ -2,12 +2,8 @@
 an excellent framework for improving the data integration of the candidate result set
 
 ## 目录
-1. [介绍](#介绍)
-2. [功能特点](#功能特点)
-3. [安装](#安装)
-4. [使用](#使用)
-5. [贡献](#贡献)
-6. [许可证](#许可证)
+1. [介绍](#介绍) 2. [功能特点](#功能特点) 3. [安装](#安装) 4. [使用](#使用)
+5. [贡献](#贡献) 6. [许可证](#许可证)
 
 ## 介绍
 
@@ -15,7 +11,14 @@ This is the experiment code project of paper “LLM-verification: An Algorithm T
 
 ## 功能特点
 
-code of experiments
+This is the code project with python3，numpy.
+(1) The use of LLM allows the input of multiple dimensions of information to do the validation of correspondence in schema match
+(2) Avoid hallucination
+(3) Reduce the excessive cost of large models
+
+（1）利用LLM，允许输入多个维度的信息，来做schema match中 correspondence的验证的优点
+（2）避免幻觉影响
+（3）减轻大模型的过高成本
 
 ## 安装
 1. git clone 本项目 到到本地
