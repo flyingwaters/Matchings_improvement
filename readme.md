@@ -12,13 +12,19 @@ This is the experiment code project of paper “LLM-verification: An Algorithm T
 ## 功能特点
 
 This is the code project with python3，numpy.
-(1) The use of LLM allows the input of multiple dimensions of information to do the validation of correspondence in schema match
-(2) Avoid hallucination
-(3) Reduce the excessive cost of large models
 
-（1）利用LLM，允许输入多个维度的信息，来做schema match中 correspondence的验证的优点
-（2）避免幻觉影响
-（3）减轻大模型的过高成本
+1.The use of LLM allows the input of multiple dimensions of information to do the validation of correspondence in schema match 
+
+2.Avoid hallucination
+
+3.Reduce the excessive cost of large models
+
+中文
+1.利用LLM，允许输入多个维度的信息，来做schema match中 correspondence的验证的优点
+
+2.避免幻觉影响
+
+3.减轻大模型的过高成本
 
 ## 安装
 1. git clone 本项目 到到本地
