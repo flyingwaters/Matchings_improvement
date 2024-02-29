@@ -19,7 +19,8 @@ This is the code project with python3，numpy.
 
 3.Reduce the excessive cost of large models
 
-中文
+#### 中文
+
 1.利用LLM，允许输入多个维度的信息，来做schema match中 correspondence的验证的优点
 
 2.避免幻觉影响
