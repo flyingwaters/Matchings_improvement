@@ -22,7 +22,8 @@ This is the code project with python3，numpy.
 
 ## 安装
 1. git clone 本项目 到到本地
-2. 安装所需要环境包 pip install valentine, pandas, tiktoken, matplotlib,  scikit-optimize
+2. 安装所需要环境包
+pip install valentine, pandas, tiktoken, matplotlib,  scikit-optimize
 
 ## 使用
 1. 运行 possible_matchings_generate.ipynb 生成 candidate result set 数据
