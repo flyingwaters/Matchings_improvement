@@ -6,12 +6,12 @@
 
 
 ## 目录(Directory)
-1. [介绍](#介绍(introduce))
-2. [功能特点](#功能特点(function features)) 
-3. [安装](#安装 installation) 
-4. [使用](#使用 usage) 
-5. [贡献](#贡献 contributions)         
-6. [许可证](#许可证 license)
+1. [介绍(introduce)](#介绍)
+2. [功能特点(function features)](#功能特点) 
+3. [安装(installation)](#安装 ) 
+4. [使用(usage)](#使用) 
+5. [贡献(contributions)](#贡献)         
+6. [许可证(license)](#许可证)
 
 ## 介绍
 
