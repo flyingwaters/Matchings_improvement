@@ -6,14 +6,14 @@
 
 
 ## 目录(Directory)
-1. [介绍(introduce)](#介绍)
-2. [功能特点(function features)](#功能特点) 
-3. [安装(installation)](#安装 ) 
-4. [使用(usage)](#使用) 
-5. [贡献(contributions)](#贡献)         
-6. [许可证(license)](#许可证)
+1. [介绍(introduce)](#介绍(introduce))
+2. [功能特点(function features)](#功能特点(function_features)) 
+3. [安装(installation)](#安装(installation)) 
+4. [使用(usage)](#使用(usage)) 
+5. [贡献联系方式(contact)](#联系方式(contact))         
+6. [许可证(license)](#许可证(license))
 
-## 介绍
+## 介绍(introduce)
 
 #### This is the experiment code project of paper “LLM-matcher: An Algorithm To Improve The Data Quality Of Schema Matching Candidate Result Set”
 #### LLM-matcher is a latest idea for data integration and an excellent framework for improving the data integration of the candidate result set
@@ -26,7 +26,7 @@
 </div>
 
 
-## 功能特点(Function features)
+## 功能特点(function_features)
 
 This is the code project with python3，numpy.
 
